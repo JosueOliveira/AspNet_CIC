@@ -22,6 +22,15 @@ namespace Aula1805 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// lblNome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNome;
+        
+        /// <summary>
         /// txtValor1 control.
         /// </summary>
         /// <remarks>

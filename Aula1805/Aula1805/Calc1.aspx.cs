@@ -10,9 +10,24 @@ namespace Aula1805
 {
     public partial class Calc1 : System.Web.UI.Page
     {
+        public string nomeUsuario
+        {
+            get
+            {
+                return ViewState["nomeUsuario"].ToString();
+            }
+            set
+            {
+                ViewState["nomeUsuario"] = value;
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {               
 
+                nomeUsuario = "godofredo";
+            }
         }
 
         protected void btnSoma_Click(object sender, EventArgs e)
@@ -25,6 +40,7 @@ namespace Aula1805
             int resultado = valor1 + valor2;
            
                 txtResultado.Text = resultado.ToString();
+            lblNome.Text = ViewState["nomeUsuario"].ToString();
                         
         }
 

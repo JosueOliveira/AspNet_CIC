@@ -8,6 +8,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
+         
+            <ContentTemplate>   
+                   <asp:Label ID="lblNome" runat="server" Text="Label"></asp:Label> 
     <div>
         <asp:TextBox ID="txtValor1" runat="server"></asp:TextBox><asp:TextBox ID="txtValor2" runat="server"></asp:TextBox>
     </div>
@@ -22,6 +25,8 @@
             </p>
         <p>
             &nbsp;</p>
+                </ContentTemplate>
+             
     </form>
 </body>
 </html>
