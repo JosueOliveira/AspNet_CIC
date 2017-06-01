@@ -76,6 +76,24 @@ namespace Aua2505_EF_Model_First.Views.Cadastros {
         protected global::System.Web.UI.WebControls.Button btnSalvar;
         
         /// <summary>
+        /// btnEditar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditar;
+        
+        /// <summary>
+        /// btnExcluir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnExcluir;
+        
+        /// <summary>
         /// btnCancelar control.
         /// </summary>
         /// <remarks>
