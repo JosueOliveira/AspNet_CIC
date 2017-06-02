@@ -35,5 +35,28 @@ namespace ProjetoHome3105_v2.Views
                 ClientScript.RegisterStartupScript(this.GetType(), "script", "alert('" + ID + "');", true);
             }
         }
+
+        protected void grdLivros_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int linha = Convert.ToInt32(e.CommandArgument);
+
+            var idObject =  Convert.ToInt32(grdLivros.Rows[linha].Cells[2].Text);
+
+            string command = e.CommandName;
+            Session["IdLocalizar"] = idObject;
+            if (command == "Excluir")
+            {
+                Session["Exculir"] = "Excluir";
+                Response.Redirect("~/Views/Cadastro/CadastroLivro.aspx");
+            }
+            else
+            {
+                if(command == "Editar")
+                {
+                    Session["Editar"] = "Editar";
+                    Response.Redirect("~/Views/Cadastro/CadastroLivro.aspx");
+                }
+            }
+        }
     }
 }
