@@ -21,7 +21,24 @@ namespace ProjetoHome3105_v2.Views.Cadastro
                 if (!IsPostBack)
                 {
                     var idLocalizar = Session["IdLocalizar"];
-                    CarregaObjecto(Convert.ToInt32(idLocalizar));
+                    
+                    bool comando = Convert.ToBoolean(Session["Comando"]);
+                    if(comando)
+                    {
+                        livro.Nome = txtNome.Text;
+                        livro.Descricao = txtDescricao.Text;
+                        livro.Autor = txtAutor.Text;
+                        int id = Convert.ToInt32(Session["IdLocalizar"]);
+                        livro.Id = id;
+                        contexto.Excluir(livro);
+                        var ID = "Excluido Com sucesso!!";
+                        ClientScript.RegisterStartupScript(this.GetType(), "script", "alert('" + ID + "');", true);
+                        Response.Redirect("~/Views/Index.aspx");
+                    }else
+                    {
+                        CarregaObjecto(Convert.ToInt32(idLocalizar));
+                    }
+                    
                 }                
             }
             Session["IsNewObject"] = false;
@@ -71,18 +88,18 @@ namespace ProjetoHome3105_v2.Views.Cadastro
             Response.Redirect("~/Views/index.aspx");
         }
 
-        protected void btnExcluir_Click(object sender, EventArgs e)
-        {
-            livro.Nome = txtNome.Text;
-            livro.Descricao = txtDescricao.Text;
-            livro.Autor = txtAutor.Text;
-            int id  = Convert.ToInt32(Session["IdLocalizar"]);
-            livro.Id = id;
-            contexto.Excluir(livro);
-            var ID = "Excluido Com sucesso!!";
-            ClientScript.RegisterStartupScript(this.GetType(), "script", "alert('" + ID + "');", true);
-            Response.Redirect("~/Views/Index.aspx");
-        }
+        //protected void btnExcluir_Click(object sender, EventArgs e)
+        //{
+        //    livro.Nome = txtNome.Text;
+        //    livro.Descricao = txtDescricao.Text;
+        //    livro.Autor = txtAutor.Text;
+        //    int id  = Convert.ToInt32(Session["IdLocalizar"]);
+        //    livro.Id = id;
+        //    contexto.Excluir(livro);
+        //    var ID = "Excluido Com sucesso!!";
+        //    ClientScript.RegisterStartupScript(this.GetType(), "script", "alert('" + ID + "');", true);
+        //    Response.Redirect("~/Views/Index.aspx");
+        //}
         
     }
 }

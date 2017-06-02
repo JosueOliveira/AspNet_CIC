@@ -14,6 +14,7 @@
     <br />
     <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
     <br />
-    <asp:Button ID="btnNewBook" runat="server" Text="Novo Livro" OnClick="btnNewBook_Click" />
-    <asp:Button ID="btnLocalizar" runat="server" Text="Localizar" OnClick="btnLocalizar_Click" />
+    <asp:Button ID="btnNewBook" class="btn btn-primary" runat="server" Text="Novo Livro" OnClick="btnNewBook_Click" />
+    <asp:Button ID="btnLocalizar" class="btn btn-primary" runat="server" Text="Localizar" OnClick="btnLocalizar_Click" />
+    <asp:Button ID="btnListar" class="btn btn-primary" runat="server" Text="Listar" OnClick="btnListar_Click" Width="105px" />
 </asp:Content>

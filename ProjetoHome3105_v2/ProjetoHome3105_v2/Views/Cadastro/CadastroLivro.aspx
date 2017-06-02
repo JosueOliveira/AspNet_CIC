@@ -11,7 +11,7 @@
     <asp:TextBox ID="txtDescricao" runat="server"></asp:TextBox>
     <br />
 
-    <asp:Button ID="btnAdicionar" runat="server" Text="Salvar" OnClick="btnAdicionar_Click" />
-    <asp:Button ID="btnEditar" runat="server" Text="Alterar" OnClick="btnEditar_Click" />
-    <asp:Button ID="btnExcluir" runat="server" Text="Excluir" OnClick="btnExcluir_Click" />
+    <asp:Button ID="btnAdicionar" class="btn btn-primary" runat="server" Text="Salvar" OnClick="btnAdicionar_Click" />
+    <asp:Button ID="btnEditar" class="btn btn-primary" runat="server" Text="Alterar" OnClick="btnEditar_Click" />
+    
 </asp:Content>

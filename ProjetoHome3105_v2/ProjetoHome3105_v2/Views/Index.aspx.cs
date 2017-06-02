@@ -11,6 +11,7 @@ namespace ProjetoHome3105_v2.Views
     public partial class Index : System.Web.UI.Page
     {
         LivroController contexto = new LivroController();
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             grdLivros.DataSource = contexto.Listar();
@@ -46,17 +47,22 @@ namespace ProjetoHome3105_v2.Views
             Session["IdLocalizar"] = idObject;
             if (command == "Excluir")
             {
-                Session["Exculir"] = "Excluir";
+                Session["Comando"] = true;
                 Response.Redirect("~/Views/Cadastro/CadastroLivro.aspx");                 
             }
             else
             {
                 if(command == "Editar")
                 {
-                    Session["Editar"] = "Editar";
+                    Session["Comando"] = false;
                     Response.Redirect("~/Views/Cadastro/CadastroLivro.aspx");
                 }
             }
+        }
+
+        protected void btnListar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Views/LivrosCadastratos");
         }
     }
 }

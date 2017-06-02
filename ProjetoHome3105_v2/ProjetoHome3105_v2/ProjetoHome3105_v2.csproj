@@ -214,6 +214,7 @@
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Cadastro\CadastroLivro.aspx" />
     <Content Include="Views\Index.aspx" />
+    <Content Include="Views\LivrosCadastratos.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
@@ -308,6 +309,13 @@
     </Compile>
     <Compile Include="Views\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LivrosCadastratos.aspx.cs">
+      <DependentUpon>LivrosCadastratos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LivrosCadastratos.aspx.designer.cs">
+      <DependentUpon>LivrosCadastratos.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
