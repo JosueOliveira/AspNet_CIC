@@ -161,6 +161,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataBaseL.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Images\alterar20.png" />
+    <Content Include="Images\delete20.png" />
     <Content Include="Model\DataBaseL.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DataBaseL.Context.cs</LastGenOutput>

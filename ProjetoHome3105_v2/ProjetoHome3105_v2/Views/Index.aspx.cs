@@ -47,7 +47,7 @@ namespace ProjetoHome3105_v2.Views
             if (command == "Excluir")
             {
                 Session["Exculir"] = "Excluir";
-                Response.Redirect("~/Views/Cadastro/CadastroLivro.aspx");
+                Response.Redirect("~/Views/Cadastro/CadastroLivro.aspx");                 
             }
             else
             {

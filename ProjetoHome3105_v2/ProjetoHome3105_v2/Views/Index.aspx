@@ -5,8 +5,8 @@
         <div class="panel panel-primary">
     <asp:GridView ID="grdLivros" runat="server" OnRowCommand="grdLivros_RowCommand">
         <Columns>
-            <asp:ButtonField CommandName="Excluir" HeaderText="Excluir" Text="Excluir" />
-            <asp:ButtonField CommandName="Editar" HeaderText="Editar" Text="Editar" />
+            <asp:ButtonField ButtonType="Image" CommandName="Excluir" HeaderText="Excluir" ImageUrl="~/Images/delete20.png" Text="Excluir" />
+            <asp:ButtonField ButtonType="Image" CommandName="Editar" HeaderText="Editar" ImageUrl="~/Images/alterar20.png" Text="Editar" />
         </Columns>
             </asp:GridView>
             </div>
