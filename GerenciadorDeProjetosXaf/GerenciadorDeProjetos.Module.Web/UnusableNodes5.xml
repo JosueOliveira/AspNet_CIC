@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="SubTarefaVinculada_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="SubTarefa">
+              <LayoutGroup Id="SubTarefa_col1">
+                <LayoutItem Id="Analista" ViewItem="Analista" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+      <Items Id="Items">
+        <PropertyEditor Id="IsNewObject" PropertyName="IsNewObject" />
+      </Items>
+    </DetailView>
+    <ListView Id="SubTarefa_ListView">
+      <Filters Id="Filters" CurrentFilterId="Valida Desenvolvedor teste" />
+    </ListView>
+    <DetailView Id="SubTarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BaseClass" RelativeSize="74.13333333333334">
+              <LayoutItem Id="IsNewObject" RelativeSize="100" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Tarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="IsNewObject" ViewItem="IsNewObject" />
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BaseClass" Caption="Is New Object" Direction="Horizontal" RelativeSize="69.101123595505612" Index="1" Removed="True">
+              <LayoutItem Id="IsNewObject" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

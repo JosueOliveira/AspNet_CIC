@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="Tarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="TesteTarefa_Group" Direction="Vertical" Index="3" RelativeSize="21.753794266441822" Removed="True">
+            <LayoutItem Id="TesteTarefa" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item1">
+              <LayoutGroup Id="Item5">
+                <LayoutGroup Id="TesteTarefa_Group">
+                  <LayoutItem Id="TesteTarefa" ViewItem="TesteTarefa" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="CriarTarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <TabbedGroup Id="Item7">
+              <LayoutGroup Id="Item1">
+                <LayoutGroup Id="subTarefa_Group">
+                  <LayoutItem Id="subTarefa" ViewItem="subTarefa" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </TabbedGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

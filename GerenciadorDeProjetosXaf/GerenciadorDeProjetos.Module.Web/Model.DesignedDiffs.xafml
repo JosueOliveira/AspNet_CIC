@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="btnFinalizar" ToolTip="Finalizar Tarefa" />
+      <Action Id="btnIniciarTarefa" ToolTip="Iniciar a tarefa atual" />
+    </Actions>
+    <ActionToContainerMapping>
+      <ActionContainer Id="ActionSubTarefa" IsNewNode="True">
+        <ActionLink ActionId="btnIniciarTarefa" IsNewNode="True" />
+      </ActionContainer>
+      <ActionContainer Id="Consultar" IsNewNode="True" />
+      <ActionContainer Id="Limpar" IsNewNode="True" />
+    </ActionToContainerMapping>
+  </ActionDesign>
+  <NavigationItems>
+    <Items>
+      <Item Id="Projetos">
+        <Items>
+          <Item Id="Projeto_ListView" Visible="True" />
+          <Item Id="ConsultaProjeto_ListView" ViewId="ConsultaProjeto_DetailView" />
+        </Items>
+      </Item>
+      <Item Id="Tarefas">
+        <Items>
+          <Item Id="Tarefa_ListView" ViewId="SubTarefa_ListView" />
+          <Item Id="CriarTarefa_DetailView" Index="2" Caption="Criar Tarefa" />
+          <Item Id="Criar SubTarefa" ObjectKey="" Index="3" Caption="Criar Sub Tarefa" ViewId="SubTarefa_DetailView_Criar" IsNewNode="True" />
+          <Item Id="Versao_ListView" Caption="teste" Index="4" ViewId="VersionarProjeto_DetailView" Removed="True" />
+          <Item Id="VersionarProjeto_DetailView" Caption="Versionar" Index="4" QuickAccessItem="False" ViewId="VersionarProjeto_DetailView" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options CollectionsEditMode="Edit" />
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="16.2.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="16.2.6.0" IsNewNode="True" />
+  </SchemaModules>
+  <Validation>
+    <Rules>
+      <RuleRequiredField Id="PermissionPolicyUser_Roles_RuleRequiredField" Removed="True" />
+    </Rules>
+  </Validation>
+  <Views>
+    <DetailView Id="ConsultaProjeto_DetailView" CollectionsEditMode="Edit" AllowDelete="False" AllowEdit="True" AllowNew="False">
+      <Items>
+        <ActionContainerViewItem Id="btnConsultarCtn" Caption="btnConsultarCtn(5)" ActionContainer="Pesquisar" IsNewNode="True" />
+        <ActionContainerViewItem Id="ctnLimpar" ActionContainer="Limpar" Caption="ctnLimpar(8)" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ConsultaProjeto" RelativeSize="100" Caption="Projeto" Direction="Vertical">
+              <LayoutGroup Id="Autoc69d1cab-cb71-4b4e-842d-621bf79b4f0c" ShowCaption="False" Caption="Autoc69d1cab-cb71-4b4e-842d-621bf79b4f0c(4)" Direction="Horizontal" Index="0" RelativeSize="11.09350237717908" IsNewNode="True">
+                <LayoutGroup Id="Autoc4efcef5-5d31-4621-ba9e-b0189deea7dd" ShowCaption="False" Caption="Autoc4efcef5-5d31-4621-ba9e-b0189deea7dd(5)" Index="0" RelativeSize="75.570469798657712" Direction="Horizontal" IsNewNode="True">
+                  <LayoutItem Id="DataInicio" ViewItem="DataInicio" Index="0" RelativeSize="27.886323268206038" IsNewNode="True" />
+                  <LayoutItem Id="DataFim" ViewItem="DataFim" Index="1" RelativeSize="26.1101243339254" IsNewNode="True" />
+                  <LayoutItem Id="Status" ViewItem="Status" Index="2" RelativeSize="21.314387211367674" IsNewNode="True" />
+                  <LayoutItem Id="Gerente" ViewItem="Gerente" Index="3" RelativeSize="24.689165186500887" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autod1045058-3a69-4e80-b4b2-b2023c23d864" ShowCaption="False" Caption="Autod1045058-3a69-4e80-b4b2-b2023c23d864(9)" Index="1" RelativeSize="24.429530201342281" Direction="Vertical" IsNewNode="True">
+                  <LayoutGroup Id="Auto1a4a05da-bdbe-4d24-9de5-eccc2d15ea5e" ShowCaption="False" Caption="Auto1a4a05da-bdbe-4d24-9de5-eccc2d15ea5e(11)" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="btnConsultarCtn" ViewItem="btnConsultarCtn" SizeConstraintsType="Custom" MinSize="182, 36" MaxSize="182, 36" Index="0" RelativeSize="51.428571428571431" IsNewNode="True" />
+                    <LayoutItem Id="ctnLimpar" ViewItem="ctnLimpar" SizeConstraintsType="Custom" MinSize="182, 34" MaxSize="182, 34" Index="1" RelativeSize="48.571428571428569" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Item1" Index="1" RelativeSize="88.906497622820922" IsNewNode="True" />
+              <LayoutItem Id="DataFim" Removed="True" />
+              <LayoutItem Id="DataInicio" Removed="True" />
+              <LayoutItem Id="Gerente" Removed="True" />
+              <LayoutItem Id="Status" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ConsultaProjeto_Projetos_ListView" AllowNew="False" AllowDelete="False">
+      <Columns>
+        <ColumnInfo Id="Codigo" Index="-1" />
+        <ColumnInfo Id="Titulo" Width="219" />
+        <ColumnInfo Id="Gerente" Index="1" />
+        <ColumnInfo Id="TempoPrevisto" Index="2" />
+        <ColumnInfo Id="TempoRealizado" Index="3" />
+        <ColumnInfo Id="DataInicio" Index="4" />
+        <ColumnInfo Id="DataPrevistoFim" Index="5" />
+        <ColumnInfo Id="DataFim" Index="6" />
+        <ColumnInfo Id="StatusProjeto" Index="7" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ConsultarTarefa_DetailView" AllowDelete="False" AllowNew="False" EnableCaptionColon="True" AllowEdit="True">
+      <Items>
+        <ActionContainerViewItem Id="ctnLimpar" PaintStyle="Image" ActionContainer="Limpar" Caption="ctnLimpar(10)" IsNewNode="True" />
+        <ActionContainerViewItem Id="Pesquisar" Caption="ctnPesquisar" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="74.7557003257329">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ConsultarTarefa" Caption="Tarefa" Direction="Vertical">
+              <LayoutGroup Id="Auto6d468a0a-b153-4833-8434-1797f4dd3035" ShowCaption="False" Caption="Auto6d468a0a-b153-4833-8434-1797f4dd3035(4)" Direction="Horizontal" Index="0" RelativeSize="20.043572984749456" IsNewNode="True">
+                <LayoutGroup Id="Auto026de686-477f-4731-9e36-d40348a61454" ShowCaption="False" Caption="Auto026de686-477f-4731-9e36-d40348a61454(5)" Index="0" RelativeSize="70.6111833550065" Direction="Horizontal" IsNewNode="True">
+                  <LayoutItem Id="Projeto" ViewItem="Projeto" Index="0" RelativeSize="25.230202578268877" IsNewNode="True" />
+                  <LayoutItem Id="Status" ViewItem="Status" Index="1" RelativeSize="24.30939226519337" IsNewNode="True" />
+                  <LayoutItem Id="Usuario" ViewItem="Usuario" Index="2" RelativeSize="24.30939226519337" IsNewNode="True" />
+                  <LayoutItem Id="ContemEm" ViewItem="ContemEm" Index="3" RelativeSize="26.151012891344383" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto47a90bf2-1cbd-4af6-96ea-259f63dea7a4" ShowCaption="False" Caption="Auto47a90bf2-1cbd-4af6-96ea-259f63dea7a4(10)" Index="1" RelativeSize="29.388816644993497" IsNewNode="True">
+                  <LayoutItem Id="Pesquisar" ViewItem="Pesquisar" SizeConstraintsType="Custom" MinSize="96, 36" Index="0" RelativeSize="39.130434782608695" IsNewNode="True" />
+                  <LayoutItem Id="ctnLimpar" ViewItem="ctnLimpar" SizeConstraintsType="Custom" MinSize="226, 56" MaxSize="226, 56" Index="1" RelativeSize="60.869565217391305" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Projeto" ViewItem="Projeto" Index="0" RelativeSize="5.0713153724247224" Removed="True" />
+              <LayoutItem Id="Item1" Index="1" RelativeSize="79.95642701525054" IsNewNode="True" />
+              <LayoutItem Id="Status" Index="1" RelativeSize="11.538461538461538" Removed="True" />
+              <LayoutItem Id="Usuario" ViewItem="Usuario" Index="1" RelativeSize="3.8034865293185418" Removed="True" />
+              <LayoutItem Id="ContemEm" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Tarefas_Group" RelativeSize="86.370839936608562" Index="1" Removed="True" />
+          <LayoutItem Id="Pesquisar" Removed="True" />
+        </LayoutGroup>
+        <LayoutGroup Id="Tarefas_Group" ShowCaption="True" Caption="Tarefas" Index="1" RelativeSize="25.2442996742671" IsNewNode="True">
+          <LayoutItem Id="Tarefas" ViewItem="Tarefas" Index="0" RelativeSize="100" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ConsultarTarefa_ListView">
+      <Columns>
+        <ColumnInfo Id="Status" AllowEdit="False" />
+        <ColumnInfo Id="Projeto" AllowEdit="False" />
+      </Columns>
+    </ListView>
+    <ListView Id="ConsultarTarefa_Tarefas_ListView" AllowNew="False" AllowUnlink="False" AllowDelete="False" AllowLink="False">
+      <Columns>
+        <ColumnInfo Id="Codigo" Index="-1" AllowEdit="False" />
+        <ColumnInfo Id="Descricao" AllowEdit="False" />
+        <ColumnInfo Id="Titulo" Width="289" SortIndex="0" SortOrder="Descending" AllowEdit="False" />
+        <ColumnInfo Id="TempoRealizado" Index="1" AllowEdit="False" />
+        <ColumnInfo Id="DataInicio" Index="2" AllowEdit="False" />
+        <ColumnInfo Id="DataFim" Index="3" AllowEdit="False" />
+        <ColumnInfo Id="TempoPrevisto" Index="4" AllowEdit="False" />
+        <ColumnInfo Id="IdVersao" Index="5" AllowEdit="False" />
+        <ColumnInfo Id="Projeto" Index="6" AllowEdit="False" />
+        <ColumnInfo Id="StatusTarefa" SortIndex="-1" SortOrder="None" Index="7" AllowEdit="False" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CriarProjeto_DetailView">
+      <Items>
+        <PropertyEditor Id="Tarefas" PropertyName="Tarefas" View="Projeto_Tarefas_ListView" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Projeto" ShowCaption="True" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Projeto_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="Codigo" ViewItem="Codigo" Index="0" RelativeSize="5.4888507718696395" IsNewNode="True" />
+                  <LayoutItem Id="Gerente" ViewItem="Gerente" Index="1" RelativeSize="4.11663807890223" IsNewNode="True" />
+                  <LayoutItem Id="Titulo" ViewItem="Titulo" Index="2" RelativeSize="4.11663807890223" IsNewNode="True" />
+                  <LayoutItem Id="Descricao" ViewItem="Descricao" Index="3" RelativeSize="86.2778730703259" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" Caption="Tempo" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Auto6a86c9ed-a574-4613-bc6b-50f467eb9afc" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="5.4888507718696395" IsNewNode="True">
+                  <LayoutItem Id="TempoPrevisto" ViewItem="TempoPrevisto" Index="0" RelativeSize="24.720670391061454" IsNewNode="True" />
+                  <LayoutItem Id="DataPrevistoFim" ViewItem="DataPrevistoFim" Index="1" RelativeSize="27.513966480446928" IsNewNode="True" />
+                  <LayoutItem Id="Item4" Index="2" RelativeSize="47.765363128491622" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Item5" Index="1" RelativeSize="94.511149228130364" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" Caption="Tarefa" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Tarefas" ViewItem="Tarefas" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="Projeto" RelativeSize="100" Direction="Vertical" Removed="True">
+              <LayoutGroup Id="Projeto_col1" RelativeSize="100">
+                <LayoutItem Id="Codigo" RelativeSize="5.6838365896980463" />
+                <LayoutItem Id="Descricao" RelativeSize="85.790408525754884" />
+                <LayoutItem Id="Gerente" RelativeSize="4.2628774422735347" />
+                <LayoutItem Id="TempoPrevisto" RelativeSize="5.6838365896980463" Removed="True" />
+                <LayoutItem Id="Titulo" RelativeSize="4.2628774422735347" />
+              </LayoutGroup>
+              <LayoutGroup Id="Projeto_col2" RelativeSize="50" Caption="Projeto_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="DataPrevistoFim" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="DataFim" RelativeSize="92.090395480226" Index="2" Removed="True" />
+                <LayoutItem Id="DataInicio" RelativeSize="3.3898305084745761" Removed="True" />
+                <LayoutItem Id="TempoRealizado" RelativeSize="4.5197740112994351" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Tarefa_Group" RelativeSize="72.533333333333331" Removed="True">
+            <LayoutItem Id="Tarefa" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="CriarTarefa_DetailView">
+      <Items>
+        <PropertyEditor Id="SubTarefa" PropertyName="SubTarefa" View="Tarefa_SubTarefa_ListView" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <TabbedGroup Id="Item7" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Tarefa" ShowCaption="True" Direction="Vertical" Index="0" RelativeSize="100" Caption="Geral" IsNewNode="True">
+                <LayoutItem Id="Titulo" ViewItem="Titulo" Index="0" RelativeSize="5.7450628366247756" IsNewNode="True" />
+                <LayoutItem Id="TempoPrevisto" ViewItem="TempoPrevisto" Index="1" RelativeSize="4.3087971274685817" IsNewNode="True" />
+                <LayoutItem Id="Projeto" ViewItem="Projeto" Index="2" RelativeSize="4.3087971274685817" IsNewNode="True" />
+                <LayoutItem Id="Descricao" ViewItem="Descricao" Index="3" RelativeSize="9.6947935368043083" IsNewNode="True" />
+                <LayoutGroup Id="Tarefa_col2" ShowCaption="False" Index="4" RelativeSize="75.942549371633746" Caption="Tarefa_col2" Direction="Horizontal" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="100" Caption="Sub Tarefa" IsNewNode="True">
+                <LayoutItem Id="SubTarefa" ViewItem="SubTarefa" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="Tarefa" ShowCaption="True" Direction="Horizontal" Index="0" RelativeSize="100" Removed="True">
+              <LayoutGroup Id="Tarefa_col1" ShowCaption="False" Direction="Horizontal" Index="0" RelativeSize="50" IsNewNode="True">
+                <LayoutGroup Id="subTarefa_Group" ShowCaption="True" Caption="sub Tarefa" Index="0" RelativeSize="40.697674418604649" IsNewNode="True">
+                  <LayoutItem Id="subTarefa" ViewItem="subTarefa" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto899b3563-257e-45d2-b04c-8e496a3adb2b" ShowCaption="False" Caption="" Index="1" RelativeSize="59.302325581395351" IsNewNode="True">
+                  <LayoutItem Id="Projeto" ViewItem="Projeto" Index="0" RelativeSize="16.842105263157894" IsNewNode="True" />
+                  <LayoutItem Id="Codigo" ViewItem="Codigo" Index="1" RelativeSize="12.631578947368421" IsNewNode="True" />
+                  <LayoutItem Id="Titulo" ViewItem="Titulo" Index="2" RelativeSize="12.631578947368421" IsNewNode="True" />
+                  <LayoutItem Id="Descricao" ViewItem="Descricao" Index="3" RelativeSize="28.421052631578949" IsNewNode="True" />
+                  <LayoutItem Id="TempoRealizado" ViewItem="TempoRealizado" Index="4" RelativeSize="12.631578947368421" IsNewNode="True" />
+                  <LayoutItem Id="DataInicio" ViewItem="DataInicio" Index="5" RelativeSize="16.842105263157894" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Tarefa_col2" ShowCaption="False" Index="1" RelativeSize="50" IsNewNode="True">
+                <LayoutItem Id="DataFim" ViewItem="DataFim" Index="0" RelativeSize="16.842105263157894" IsNewNode="True" />
+                <LayoutItem Id="TempoPrevisto" ViewItem="TempoPrevisto" Index="1" RelativeSize="12.631578947368421" IsNewNode="True" />
+                <LayoutItem Id="Versao" Index="2" RelativeSize="70.526315789473685" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="subTarefa_Group" RelativeSize="50.133333333333333" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Projeto_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Projeto" ShowCaption="True" Direction="Vertical" Index="0" RelativeSize="100" Caption="Geral" IsNewNode="True">
+                <LayoutGroup Id="Projeto_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="Auto0da291a0-d271-4a16-aea2-cd4d502d97ff" ShowCaption="False" Caption="Auto0da291a0-d271-4a16-aea2-cd4d502d97ff(6)" Direction="Horizontal" Index="0" RelativeSize="5.4131054131054128" IsNewNode="True">
+                    <LayoutItem Id="Codigo" ViewItem="Codigo" Index="0" RelativeSize="50" IsNewNode="True" />
+                    <LayoutItem Id="StatusProjeto" ViewItem="StatusProjeto" Index="1" RelativeSize="50" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Titulo" ViewItem="Titulo" Index="1" RelativeSize="3.4188034188034186" IsNewNode="True" />
+                  <LayoutItem Id="Descricao" ViewItem="Descricao" Index="2" RelativeSize="86.6096866096866" IsNewNode="True" />
+                  <LayoutItem Id="Gerente" ViewItem="Gerente" Index="3" RelativeSize="4.5584045584045585" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" Caption="Tempo" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Autod75a6373-fe19-4a7e-b8f1-aa1b5a59c998" ShowCaption="False" Caption="Autod75a6373-fe19-4a7e-b8f1-aa1b5a59c998(13)" Direction="Vertical" Index="0" RelativeSize="4.9857549857549861" IsNewNode="True">
+                  <LayoutItem Id="TempoPrevisto" ViewItem="TempoPrevisto" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto4e8d357d-01cc-4d28-a0bf-0f9237818985" ShowCaption="False" Caption="Auto4e8d357d-01cc-4d28-a0bf-0f9237818985(16)" Index="1" RelativeSize="95.01424501424502" IsNewNode="True">
+                  <LayoutItem Id="DataPrevistoFim" ViewItem="DataPrevistoFim" Index="0" RelativeSize="4.0479760119940034" IsNewNode="True" />
+                  <LayoutGroup Id="Auto83d84e83-3842-4809-9c2d-692b12c2fde4" ShowCaption="False" Caption="Auto83d84e83-3842-4809-9c2d-692b12c2fde4(18)" Direction="Horizontal" Index="1" RelativeSize="95.95202398800599" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Tarefas_Group" ShowCaption="True" Caption="Tarefas" Index="2" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Tarefas" ViewItem="Tarefas" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="Projeto" Removed="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" Index="1" RelativeSize="33.333333333333336" Removed="True">
+            <LayoutGroup Id="Versao" Index="0" RelativeSize="100">
+              <LayoutItem Id="Versao" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Tarefas" Removed="True" />
+          </TabbedGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="25.801011804384487" Caption="Descricao" Direction="Horizontal" Removed="True">
+            <LayoutItem Id="Descricao" RelativeSize="100" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Projeto_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" InlineEditMode="Inline" Criteria="!StatusProjeto = 'Cancelado' &amp;&amp; !StatusProjeto = 'Finalizado'">
+      <Columns>
+        <ColumnInfo Id="Codigo" Index="-1" />
+        <ColumnInfo Id="TempoRealizado" Index="-1" />
+        <ColumnInfo Id="Titulo" Width="280" />
+        <ColumnInfo Id="Gerente" Index="1" />
+        <ColumnInfo Id="TempoPrevisto" Index="2" />
+        <ColumnInfo Id="DataInicio" Index="3" />
+        <ColumnInfo Id="DataPrevistoFim" Index="4" />
+        <ColumnInfo Id="DataFim" Index="5" />
+        <ColumnInfo Id="StatusProjeto" Index="6" />
+      </Columns>
+    </ListView>
+    <ListView Id="Projeto_Tarefas_ListView" AllowDelete="False" AllowLink="False" ShowSelectionColumn="False">
+      <Columns>
+        <ColumnInfo Id="Codigo" Index="-1" />
+        <ColumnInfo Id="IdVersao" Index="-1" />
+        <ColumnInfo Id="TempoRealizado" Index="-1" />
+        <ColumnInfo Id="Titulo" Width="186" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="DataInicio" Index="1" />
+        <ColumnInfo Id="DataFim" Index="2" />
+        <ColumnInfo Id="TempoPrevisto" Index="3" />
+        <ColumnInfo Id="StatusTarefa" Index="4" SortIndex="0" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SubTarefa_DetailView" AllowDelete="True" AllowEdit="True" AllowNew="True">
+      <Items>
+        <PropertyEditor Id="HistoricoTempo" Removed="True" />
+        <PropertyEditor Id="Testes" Removed="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="SubTarefa" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="SubTarefa_col1" RelativeSize="100">
+                <LayoutItem Id="Titulo" RelativeSize="5.4054054054054053" Index="0" />
+                <LayoutItem Id="Desenvolvedor" RelativeSize="4.0540540540540544" Index="1" />
+                <LayoutItem Id="Teste" RelativeSize="4.0540540540540544" Index="2" />
+                <LayoutItem Id="Analista" RelativeSize="4.0540540540540544" Index="3" />
+                <LayoutItem Id="Descricao" RelativeSize="82.432432432432435" Index="4" />
+                <LayoutItem Id="Codigo" RelativeSize="5.3156146179401995" Removed="True" />
+                <LayoutItem Id="Correcao" RelativeSize="16.022099447513813" Removed="True" />
+                <LayoutItem Id="EmTeste" RelativeSize="8.4548104956268215" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="SubTarefa_col2" RelativeSize="20.450885668276971" Direction="Horizontal" Removed="True">
+                <LayoutGroup Id="Auto7fff1b1d-9ada-41f4-82c0-7507b7f06c3a" Caption="Auto7fff1b1d-9ada-41f4-82c0-7507b7f06c3a(20)" RelativeSize="100" Direction="Horizontal" Index="0" Removed="True">
+                  <LayoutItem Id=" SubTarefaCnt" RelativeSize="100" Index="0" Removed="True" />
+                  <LayoutItem Id="StatusSubTarefa" RelativeSize="46.468401486988846" Removed="True" />
+                </LayoutGroup>
+                <LayoutItem Id="DataInicio" RelativeSize="20" Index="0" Removed="True" />
+                <LayoutItem Id="DataFim" RelativeSize="15" Index="3" Removed="True" />
+                <LayoutItem Id="Tarefa" Removed="True" />
+                <LayoutItem Id="TempoRealizado" RelativeSize="13.259668508287293" Removed="True" />
+                <LayoutItem Id="TempoUtilizado" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" Direction="Horizontal" RelativeSize="33.54037267080745" Removed="True" />
+          <TabbedGroup Id="Tabs" RelativeSize="33.280507131537242" Removed="True">
+            <LayoutGroup Id="Testes" RelativeSize="100" Index="0">
+              <LayoutItem Id="Testes" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="HistoricoTempo" RelativeSize="100" Removed="True">
+              <LayoutItem Id="HistoricoTempo" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="SubTarefa_DetailView_Criar" ClassName="GerenciadorDeProjetos.Module.BusinessObjects.Entities.SubTarefa" IsNewNode="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="Analista" PropertyName="Analista" IsNewNode="True" />
+        <PropertyEditor Id="Codigo" PropertyName="Codigo" IsNewNode="True" />
+        <PropertyEditor Id="Correcao" PropertyName="Correcao" IsNewNode="True" />
+        <PropertyEditor Id="DataFim" PropertyName="DataFim" IsNewNode="True" />
+        <PropertyEditor Id="DataInicio" PropertyName="DataInicio" IsNewNode="True" />
+        <PropertyEditor Id="Descricao" PropertyName="Descricao" IsNewNode="True" />
+        <PropertyEditor Id="Desenvolvedor" PropertyName="Desenvolvedor" IsNewNode="True" />
+        <PropertyEditor Id="EmTeste" PropertyName="EmTeste" IsNewNode="True" />
+        <PropertyEditor Id="StatusSubTarefa" PropertyName="StatusSubTarefa" IsNewNode="True" />
+        <PropertyEditor Id="Tarefa" PropertyName="Tarefa" IsNewNode="True" />
+        <PropertyEditor Id="TempoRealizado" PropertyName="TempoRealizado" IsNewNode="True" />
+        <PropertyEditor Id="Teste" PropertyName="Teste" IsNewNode="True" />
+        <PropertyEditor Id="Titulo" PropertyName="Titulo" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="SubTarefa" Index="0" Direction="Vertical" ShowCaption="True" Caption="Criar Sub Tarefa" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="SubTarefa_col1" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Codigo" ViewItem="Codigo" ShowCaption="" Index="0" RelativeSize="5.4329371816638368" IsNewNode="True" />
+                <LayoutItem Id="Titulo" ViewItem="Titulo" ShowCaption="" Index="1" RelativeSize="4.074702886247878" IsNewNode="True" />
+                <LayoutItem Id="Desenvolvedor" ViewItem="Desenvolvedor" ShowCaption="" Index="2" RelativeSize="4.074702886247878" IsNewNode="True" />
+                <LayoutItem Id="Teste" ViewItem="Teste" ShowCaption="" Index="3" RelativeSize="4.074702886247878" IsNewNode="True" />
+                <LayoutItem Id="Analista" ViewItem="Analista" ShowCaption="" Index="4" RelativeSize="4.074702886247878" IsNewNode="True" />
+                <LayoutItem Id="Tarefa" ViewItem="Tarefa" Index="5" RelativeSize="4.074702886247878" IsNewNode="True" />
+                <LayoutItem Id="Descricao" ViewItem="Descricao" ShowCaption="" Index="6" RelativeSize="29.202037351443124" IsNewNode="True" />
+                <LayoutItem Id="Item1" Index="7" RelativeSize="44.991511035653652" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="SubTarefa_ListView" Criteria="!StatusSubTarefa = 'Aprovado' &amp;&amp; !StatusSubTarefa = 'Cancelado'" ShowSelectionColumn="False" Caption="Tarefa" DetailRowMode="DetailView" AllowLink="False" AllowDelete="False" DetailRowView="SubTarefa_RowDetailView">
+      <Columns>
+        <ColumnInfo Id="Analista" Index="-1" />
+        <ColumnInfo Id="Codigo" Index="-1" />
+        <ColumnInfo Id="Descricao" Index="-1" Removed="True" />
+        <ColumnInfo Id="Desenvolvedor" Index="-1" />
+        <ColumnInfo Id="Tarefa" PropertyName="Tarefa" Index="-1" IsNewNode="True" Removed="True" />
+        <ColumnInfo Id="TempoRealizado" Index="-1" />
+        <ColumnInfo Id="Teste" Index="-1" />
+        <ColumnInfo Id="StatusSubTarefa" Index="0" />
+        <ColumnInfo Id="Titulo" Index="1" />
+        <ColumnInfo Id="TempoUtilizado" Index="2" />
+        <ColumnInfo Id="DataInicio" Index="3" />
+        <ColumnInfo Id="DataFim" Index="4" />
+        <ColumnInfo Id="Correcao" Index="5" />
+        <ColumnInfo Id="EmTeste" Index="6" />
+      </Columns>
+      <Filters CurrentFilterId="Filtro ListView" />
+    </ListView>
+    <DetailView Id="SubTarefa_RowDetailView" ClassName="GerenciadorDeProjetos.Module.BusinessObjects.Entities.SubTarefa" IsNewNode="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="Codigo" PropertyName="Codigo" IsNewNode="True" />
+        <PropertyEditor Id="Descricao" PropertyName="Descricao" IsNewNode="True" />
+        <PropertyEditor Id="Tarefa.Codigo" PropertyName="Tarefa.Codigo" IsNewNode="True" />
+        <PropertyEditor Id="Tarefa.Descricao" PropertyName="Tarefa.Descricao" IsNewNode="True" />
+        <PropertyEditor Id="Tarefa.IdVersao" PropertyName="Tarefa.IdVersao" IsNewNode="True" />
+        <PropertyEditor Id="Tarefa.Titulo" PropertyName="Tarefa.Titulo" IsNewNode="True" />
+        <PropertyEditor Id="Titulo" PropertyName="Titulo" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="23.974763406940063" Caption="Sub Tarefa" IsNewNode="True">
+            <LayoutItem Id="Codigo" ViewItem="Codigo" Index="0" RelativeSize="27.118644067796609" IsNewNode="True" />
+            <LayoutItem Id="Titulo" ViewItem="Titulo" Index="1" RelativeSize="20.338983050847457" IsNewNode="True" />
+            <LayoutItem Id="Descricao" ViewItem="Descricao" Index="2" RelativeSize="52.542372881355931" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="70.031545741324919" Caption="Tarefa" IsNewNode="True">
+            <LayoutItem Id="Tarefa.Codigo" ViewItem="Tarefa.Codigo" Index="0" RelativeSize="7.6555023923444976" IsNewNode="True" />
+            <LayoutItem Id="Tarefa.Titulo" ViewItem="Tarefa.Titulo" Index="1" RelativeSize="5.741626794258373" IsNewNode="True" />
+            <LayoutItem Id="Tarefa.Descricao" ViewItem="Tarefa.Descricao" Index="2" RelativeSize="78.94736842105263" IsNewNode="True" />
+            <LayoutItem Id="Tarefa.IdVersao" ViewItem="Tarefa.IdVersao" Index="3" RelativeSize="7.6555023923444976" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors" Index="2" ShowCaption="False" RelativeSize="5.9936908517350158" Direction="Horizontal" Caption="SimpleEditors" IsNewNode="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="SubTarefaVinculada_DetailView" ClassName="GerenciadorDeProjetos.Module.BusinessObjects.Entities.SubTarefa" IsNewNode="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="Codigo" PropertyName="Codigo" IsNewNode="True" />
+        <PropertyEditor Id="DataFim" PropertyName="DataFim" IsNewNode="True" />
+        <PropertyEditor Id="DataInicio" PropertyName="DataInicio" IsNewNode="True" />
+        <PropertyEditor Id="Descricao" PropertyName="Descricao" IsNewNode="True" />
+        <PropertyEditor Id="Desenvolvedor" PropertyName="Desenvolvedor" IsNewNode="True" />
+        <PropertyEditor Id="Tarefa" PropertyName="Tarefa" IsNewNode="True" />
+        <PropertyEditor Id="TempoRealizado" PropertyName="TempoRealizado" IsNewNode="True" />
+        <PropertyEditor Id="Teste" PropertyName="Teste" IsNewNode="True" />
+        <PropertyEditor Id="Titulo" PropertyName="Titulo" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="SubTarefa" Index="0" Direction="Horizontal" ShowCaption="True" Caption="Sub Tarefa" RelativeSize="32.666666666666664" IsNewNode="True">
+              <LayoutGroup Id="SubTarefa_col1" Index="0" ShowCaption="False" RelativeSize="50" IsNewNode="True">
+                <LayoutItem Id="Codigo" ViewItem="Codigo" ShowCaption="" Index="0" RelativeSize="15.165876777251185" IsNewNode="True" />
+                <LayoutItem Id="Titulo" ViewItem="Titulo" ShowCaption="" Index="1" RelativeSize="11.374407582938389" IsNewNode="True" />
+                <LayoutItem Id="Descricao" ViewItem="Descricao" ShowCaption="" Index="2" RelativeSize="11.374407582938389" IsNewNode="True" />
+                <LayoutItem Id="Desenvolvedor" ViewItem="Desenvolvedor" ShowCaption="" Index="3" RelativeSize="11.374407582938389" IsNewNode="True" />
+                <LayoutItem Id="Teste" ViewItem="Teste" ShowCaption="" Index="4" RelativeSize="11.374407582938389" IsNewNode="True" />
+                <LayoutItem Id="Analista" ViewItem="Analista" ShowCaption="" Index="5" RelativeSize="39.33649289099526" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="SubTarefa_col2" Index="1" ShowCaption="False" RelativeSize="50" IsNewNode="True">
+                <LayoutItem Id="StatuSubTarefa" ViewItem="StatuSubTarefa" ShowCaption="" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="BaseClass" Index="1" ShowCaption="False" RelativeSize="67.333333333333329" IsNewNode="True">
+              <LayoutItem Id="IsNewObject" ViewItem="IsNewObject" ShowCaption="" Index="0" RelativeSize="100" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Tarefa_DetailView" AllowDelete="True" AllowEdit="True" AllowNew="True">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="38.193343898573694">
+            <TabbedGroup Id="Item1" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Tarefa" ShowCaption="True" Caption="Geral" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Tarefa_col1" ShowCaption="False" Index="0" RelativeSize="100" Caption="Tarefa_col1" IsNewNode="True">
+                  <LayoutItem Id="Titulo" ViewItem="Titulo" Index="0" RelativeSize="16.410256410256409" IsNewNode="True" />
+                  <LayoutGroup Id="Autoc3a7a37f-ada0-4aa7-af33-85672c467e26" ShowCaption="False" Caption="Autoc3a7a37f-ada0-4aa7-af33-85672c467e26(7)" Direction="Vertical" Index="1" RelativeSize="83.589743589743591" IsNewNode="True">
+                    <LayoutGroup Id="Autof7f2734b-0018-4457-a073-903fe16623ff" ShowCaption="False" Caption="Autof7f2734b-0018-4457-a073-903fe16623ff(8)" Index="0" RelativeSize="100" Direction="Vertical" IsNewNode="True">
+                      <LayoutItem Id="TempoPrevisto" ViewItem="TempoPrevisto" Index="0" RelativeSize="18.404907975460123" IsNewNode="True" />
+                      <LayoutItem Id="Descricao" ViewItem="Descricao" Index="1" RelativeSize="81.595092024539881" IsNewNode="True" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="SubTarefa_Group" ShowCaption="True" Caption="Sub Tarefa" Index="1" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="SubTarefa" ViewItem="SubTarefa" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+            </TabbedGroup>
+            <LayoutGroup Id="Tarefa" RelativeSize="68" Removed="True">
+              <LayoutGroup Id="Tarefa_col1" RelativeSize="49.862258953168045">
+                <LayoutItem Id="Codigo" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="DataFim" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="DataInicio" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="TempoRealizado" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Titulo" RelativeSize="17.647058823529413" />
+              </LayoutGroup>
+              <LayoutGroup Id="Tarefa_col2" RelativeSize="50.137741046831955">
+                <LayoutItem Id="Projeto" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="StatusTarefa" RelativeSize="41.1764705882353" />
+                <LayoutItem Id="TempoPrevisto" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="ver" RelativeSize="17.647058823529413" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutItem Id="IsNewObject" ViewItem="IsNewObject" Index="1" RelativeSize="61.806656101426306" IsNewNode="True" />
+          <LayoutGroup Id="SubTarefa_Group" Direction="Vertical" Index="3" RelativeSize="21.753794266441822" Removed="True">
+            <LayoutItem Id="SubTarefa" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="67.670364500792388" Caption="Descricao" Direction="Horizontal" Removed="True">
+            <LayoutItem Id="Descricao" RelativeSize="100" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Tarefa_ListView" AllowDelete="False" AllowLink="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Codigo" Index="-1" />
+        <ColumnInfo Id="DataFim" Index="-1" />
+        <ColumnInfo Id="DataInicio" Index="-1" />
+        <ColumnInfo Id="IdVersao" Index="-1" />
+        <ColumnInfo Id="Projeto" Index="-1" />
+        <ColumnInfo Id="TempoRealizado" Index="-1" />
+        <ColumnInfo Id="Titulo" Width="166" />
+        <ColumnInfo Id="Descricao" Index="1" Width="211" />
+        <ColumnInfo Id="TempoPrevisto" Index="2" Width="239" />
+        <ColumnInfo Id="StatusTarefa" Index="3" Width="96" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Versao_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False" />
+    <ListView Id="Versao_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <ListView Id="Versao_LookupListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <DetailView Id="VersionarProjeto_DetailView" AllowEdit="True" ClassName="GerenciadorDeProjetos.Module.Views.VersionarProjeto">
+      <Items>
+        <ActionContainerViewItem Id="btnConsultarCtn" Caption="btnConsultarCtn" ActionContainer="Pesquisar" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="VersionarProjeto" RelativeSize="100">
+              <LayoutItem Id="Projeto" RelativeSize="5.39629005059022" />
+              <LayoutItem Id="NovaVersao" Index="2" RelativeSize="4.0472175379426645" />
+              <LayoutItem Id="btnConsultarCtn" ViewItem="btnConsultarCtn" Index="3" RelativeSize="86.509274873524447" IsNewNode="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="VersionarProjeto_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <ListView Id="VersionarProjeto_LookupListView" AllowDelete="False" AllowLink="False" AllowNew="False" />
+    <ListView Id="VersionarProjeto_Tarefas_ListView" AllowDelete="False" AllowLink="False" AllowNew="False" InlineEditMode="Inline">
+      <Columns>
+        <ColumnInfo Id="Codigo" Index="-1" />
+        <ColumnInfo Id="DataFim" Index="-1" />
+        <ColumnInfo Id="DataInicio" Index="-1" />
+        <ColumnInfo Id="Projeto" Index="-1" />
+        <ColumnInfo Id="TempoPrevisto" Index="-1" />
+        <ColumnInfo Id="TempoRealizado" Index="-1" />
+        <ColumnInfo Id="Titulo" SortOrder="Ascending" Width="210" />
+        <ColumnInfo Id="StatusTarefa" Index="1" />
+        <ColumnInfo Id="IdVersao" Index="2" />
+      </Columns>
+      <Filters>
+        <Filter Id="VersionarTarefasFiltro" Caption="VersionarTarefasFiltro" Criteria="[StatusTarefa] = ##Enum#GerenciadorDeProjetos.Module.BusinessObjects.Shared.StatusTarefaEnum,Desenvolvido#" IsNewNode="True" />
+      </Filters>
+    </ListView>
+  </Views>
+</Application>

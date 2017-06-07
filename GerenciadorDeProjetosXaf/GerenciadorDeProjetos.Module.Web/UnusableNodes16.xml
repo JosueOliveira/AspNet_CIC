@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="SubTarefaVinculada_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BaseClass">
+              <LayoutItem Id="IsNewObject" ViewItem="IsNewObject" />
+            </LayoutGroup>
+            <LayoutGroup Id="SubTarefa">
+              <LayoutGroup Id="SubTarefa_col2">
+                <LayoutItem Id="StatuSubTarefa" ViewItem="StatuSubTarefa" />
+              </LayoutGroup>
+              <LayoutGroup Id="SubTarefa_col1">
+                <LayoutItem Id="Analista" ViewItem="Analista" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Projeto_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="Tarefas_Group" Direction="Vertical" RelativeSize="72.344013490725132" Index="1" Removed="True">
+            <LayoutItem Id="Tarefas" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Tarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="IsNewObject" ViewItem="IsNewObject" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

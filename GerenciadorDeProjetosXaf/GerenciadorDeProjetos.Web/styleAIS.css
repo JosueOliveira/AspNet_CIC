@@ -1,0 +1,215 @@
+﻿.dxm-item.accountItem.dxm-subMenu .dx-vam {
+    padding-left: 10px;
+}
+
+.dxm-item.accountItem.dxm-subMenu .dxm-image.dx-vam {
+    border-radius: 32px;
+    -moz-border-radius: 32px;
+    -webkit-border-radius: 32px;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    max-height: 32px;
+    max-width: 32px;
+}
+
+.sizeLimit {
+    max-width: 1980px;
+}
+
+body {
+    background-image: url("/images/background.png");
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+    background-size: 100%;
+}
+
+.white {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+/*painel content agrupamento*/
+.CardGroupContent {
+    background: linear-gradient(white, transparent,white);
+}
+
+.white {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+/*Header da grid*/
+.dxgvHeader_XafTheme {
+    background: linear-gradient(#e6e6e6,transparent);
+}
+/*Caption Header da grid*/
+.dx-wrap {
+    color: black;
+    font-size: 14px;
+}
+
+.dxnbLite_XafTheme .dxnb-header, .dxnbLite_XafTheme .dxnb-headerCollapsed {
+    background: linear-gradient(#e6e6e6,transparent);
+    font-size: 14px;
+}
+
+/*painel content tab layout*/
+.LayoutTabContainer {
+    background: linear-gradient(white, #e6e6e6);
+}
+
+/*Tab ativa*/
+.LayoutTabbedGroupContainer .dxtcLite_XafTheme > .dxtc-stripContainer .dxtc-activeTab, .LayoutTabbedGroupContainer .dxtcLite_XafTheme.dxtc-noSpacing > .dxtc-stripContainer .dxtc-activeTab.dxtc-lead, .LayoutTabbedGroupContainer .dxtcLite_XafTheme.dxtc-noSpacing > .dxtc-stripContainer .dxtc-activeTab {
+    background: linear-gradient(#e6e6e6,transparent);
+}
+
+/*Tab inativa*/
+.LayoutTabbedGroupContainer .dxtcLite_XafTheme > .dxtc-stripContainer .dxtc-tab, .LayoutTabbedGroupContainer .dxtcLite_XafTheme > .dxtc-stripContainer .dxtc-activeTab {
+    background: linear-gradient(transparent, transparent,white);
+}
+
+.LayoutTabbedGroupContainer .dxtc-tab {
+    background: linear-gradient(white, transparent,white);
+}
+
+.LayoutTabbedGroupContainer .dxtc-psi {
+    background: linear-gradient(white, transparent,white);
+}
+
+/*Item menu selecionado*/
+.xafNav .dxnbLite_XafTheme .dxnb-itemSelected, .xafNav .dxnbLite_XafTheme .dxnb-largeSelected {
+    background-color: #e6f2ff;
+}
+/*Item menu mouse em cima*/
+.xafNav .dxnbLite_XafTheme .dxnb-itemHover {
+    background-color: #f2f2f2;
+}
+.dxgvADT {
+    color: black;
+}
+/*Caption do Titulo da página*/
+.XafVCap-Second {
+    color: black;
+    font-size: 20px;
+}
+.dxgvTable_XafTheme {
+    background-color: transparent;
+}
+/*Rodape*/
+.xafFooter {
+    background: linear-gradient(transparent,silver,transparent);
+    color: black;
+}
+/*Caption das linhas da grid*/
+.dxgv {
+    color: black;
+    font-size: 13px;
+    padding: 0px;
+    background: transparent;
+}
+.dx {
+    background-color: transparent;
+}
+/*Caption Header da grid*/
+.dx-wrap {
+    color: black;
+}
+
+
+/*Caption das Actions button e menu*/
+.dx-vam {
+    color: black;
+    font-size: 13px;
+}
+
+.xafNav .dxnbLite_XafTheme .dxnb-last .dxnb-content, .xafNav .dxnbLite_XafTheme .dxnb-content, .xafNav .dxnbLite_XafTheme .dxnb-item {
+    border: 1px hidden white;
+}
+
+.dxm-item {
+    border: hidden transparent;
+}
+/*Tamanho Pagina*/
+.dx {
+    font-size: 12px;
+    color: black;
+}
+
+/*numero do paginator*/
+.dxpLite_XafTheme .dxp-num {
+    font-size: 14px;
+    color: black;
+    padding: 8px 12px;
+}
+/*paginator*/
+.dxp-lead {
+    font-size: 14px;
+    color: blue;
+}
+
+/*paginator botoes de avanço de pagina*/
+.dxpLite_XafTheme .dxp-button {
+    padding: 3px;
+}
+
+.dxp-bi {
+    font-size: 11px;
+    color: blue;
+}
+
+.dxp-disabledButton {
+    text-decoration: solid;
+}
+/*Caption das propriedades*/
+.Caption {
+    color: black;
+    font-size: 12px;
+}
+
+/*Caption das linhas da grid*/
+.dxgv {
+    color: black;
+    font-size: 13px;
+    padding: 0px;
+}
+
+/*Combobox tamanho pagina*/
+.dxpLite_XafTheme .dxp-comboBox {
+    font-size: 13px;
+    height: 24px;
+    float: left;
+    color: black;
+}
+
+
+
+/*Caption do Titulo da página*/
+.XafVCap-Second {
+    color: black;
+    font-size: 20px;
+}
+
+/*Combobox enum*/
+.Item .WebEditorCell td.dxic > input, .Item .dxeButtonEdit_XafTheme td.dxic > input {
+    font-size: 14px;
+    width: 100%;
+}
+
+/*Actions Tamanho do botão*/
+.dxmLite_XafTheme.dxm-ltr .dxm-vertical .dxm-image-l .dxm-content, .dxmLite_XafTheme.dxm-ltr .dxm-vertical .dxm-image-r .dxm-content {
+    border: none;
+    text-align: center;
+    
+}
+
+
+.GroupHeader {
+    background: linear-gradient(#e6e6e6,transparent);
+    color: black;
+}
+
+.Label {
+    color: black;
+}
+

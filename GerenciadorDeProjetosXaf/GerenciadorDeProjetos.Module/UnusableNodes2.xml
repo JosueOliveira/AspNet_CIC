@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="CriarTarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="subTarefa_Group">
+            <LayoutItem Id="subTarefa" ViewItem="subTarefa" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Tarefa">
+              <LayoutGroup Id="Tarefa_col2">
+                <LayoutItem Id="Versao" ViewItem="Versao" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="CriarProjeto_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="Tarefa_Group">
+            <LayoutItem Id="Tarefa" ViewItem="Tarefa" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Perfil Usuário" Index="3" />
+    </Items>
+  </NavigationItems>
+</Application>

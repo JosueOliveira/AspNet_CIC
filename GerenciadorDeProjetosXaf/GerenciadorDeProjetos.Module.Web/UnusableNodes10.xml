@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="SubTarefaVinculada_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BaseClass">
+              <LayoutItem Id="IsNewObject" ViewItem="IsNewObject" />
+            </LayoutGroup>
+            <LayoutGroup Id="SubTarefa">
+              <LayoutGroup Id="SubTarefa_col2">
+                <LayoutItem Id="StatuSubTarefa" ViewItem="StatuSubTarefa" />
+              </LayoutGroup>
+              <LayoutGroup Id="SubTarefa_col1">
+                <LayoutItem Id="Analista" ViewItem="Analista" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="SubTarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="SubTarefa">
+              <LayoutGroup Id="SubTarefa_col2">
+                <LayoutGroup Id="Autod197f9ca-5a72-4c2e-a88f-f9c1bdcb645d">
+                  <LayoutItem Id="ControladoresSubTarefa" ViewItem="ControladoresSubTarefa" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Tarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="IsNewObject" ViewItem="IsNewObject" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

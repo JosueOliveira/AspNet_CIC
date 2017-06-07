@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="CriarTarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Tarefa">
+              <LayoutGroup Id="Tarefa_col2">
+                <LayoutItem Id="Versao" ViewItem="Versao" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+      <Items Id="Items">
+        <PropertyEditor Id="subTarefa" PropertyName="subTarefa" View="Tarefa_subTarefa_ListView" />
+      </Items>
+    </DetailView>
+    <DetailView Id="CriarProjeto_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="Tarefa_Group">
+            <LayoutItem Id="Tarefa" ViewItem="Tarefa" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Tarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="subTarefa_Group" Direction="Vertical" RelativeSize="36.266666666666666">
+            <LayoutItem Id="subTarefa" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

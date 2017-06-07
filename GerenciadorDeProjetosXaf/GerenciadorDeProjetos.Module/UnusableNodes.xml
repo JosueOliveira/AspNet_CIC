@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="CriarTarefa_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="Versao" PropertyName="Versao" />
+      </Items>
+    </DetailView>
+    <DetailView Id="CriarProjeto_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="Tarefa" PropertyName="Tarefa" View="Projeto_Tarefa_ListView" />
+      </Items>
+    </DetailView>
+  </Views>
+</Application>

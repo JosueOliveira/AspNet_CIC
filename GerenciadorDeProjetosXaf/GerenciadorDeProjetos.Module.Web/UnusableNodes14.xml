@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="SubTarefaVinculada_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="BaseClass">
+              <LayoutItem Id="IsNewObject" ViewItem="IsNewObject" />
+            </LayoutGroup>
+            <LayoutGroup Id="SubTarefa">
+              <LayoutGroup Id="SubTarefa_col2">
+                <LayoutItem Id="StatuSubTarefa" ViewItem="StatuSubTarefa" />
+              </LayoutGroup>
+              <LayoutGroup Id="SubTarefa_col1">
+                <LayoutItem Id="Analista" ViewItem="Analista" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Tarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutItem Id="IsNewObject" ViewItem="IsNewObject" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <ActionDesign Id="ActionDesign">
+    <Actions Id="Actions">
+      <Action Id="btnReprovarTarefa" TargetObjectsCriteria="IsCurrentUserInRole('Testar')" />
+    </Actions>
+  </ActionDesign>
+</Application>

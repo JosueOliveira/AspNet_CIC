@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="CriarTarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="subTarefa_Group">
+            <LayoutItem Id="subTarefa" ViewItem="subTarefa" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Tarefa">
+              <LayoutGroup Id="Tarefa_col2">
+                <LayoutItem Id="Versao" ViewItem="Versao" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="CriarProjeto_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="Tarefa_Group">
+            <LayoutItem Id="Tarefa" ViewItem="Tarefa" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="SubTarefa_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="HistoricoTempo_Group" Direction="Vertical" RelativeSize="66.273187183811132">
+            <LayoutItem Id="HistoricoTempo" RelativeSize="100" />
+          </LayoutGroup>
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="SubTarefa">
+              <LayoutGroup Id="SubTarefa_col2">
+                <LayoutGroup Id="Auto7fff1b1d-9ada-41f4-82c0-7507b7f06c3a">
+                  <LayoutItem Id=" SubTarefaCnt" ViewItem=" SubTarefaCnt" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="Sub Tarefas" Index="5" />
+    </Items>
+  </NavigationItems>
+</Application>
