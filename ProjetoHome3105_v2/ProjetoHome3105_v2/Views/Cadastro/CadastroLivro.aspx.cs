@@ -87,19 +87,6 @@ namespace ProjetoHome3105_v2.Views.Cadastro
             ClientScript.RegisterStartupScript(this.GetType(), "script", "alert('" + ID + "');", true);
             Response.Redirect("~/Views/index.aspx");
         }
-
-        //protected void btnExcluir_Click(object sender, EventArgs e)
-        //{
-        //    livro.Nome = txtNome.Text;
-        //    livro.Descricao = txtDescricao.Text;
-        //    livro.Autor = txtAutor.Text;
-        //    int id  = Convert.ToInt32(Session["IdLocalizar"]);
-        //    livro.Id = id;
-        //    contexto.Excluir(livro);
-        //    var ID = "Excluido Com sucesso!!";
-        //    ClientScript.RegisterStartupScript(this.GetType(), "script", "alert('" + ID + "');", true);
-        //    Response.Redirect("~/Views/Index.aspx");
-        //}
         
     }
 }
