@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Aula1306_MVC.Models.Categoria>
+
+@{
+    ViewBag.Title = "Categorias";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@*@foreach(string item in ViewBag.ListaCategorias)
+{
+    <a href="#">@item</a>
+    //para cadas item da lista separa com |
+    if (((List<string>)ViewBag.ListaCategorias).Last() != item)
+    {
+        @: |
+    }
+}*@
+
+
+@foreach(var item in Model)
+{
+    <b>@item.Nome</b>
+    <p>@item.Descricao</p>
+}
