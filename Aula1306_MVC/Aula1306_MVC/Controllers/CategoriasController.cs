@@ -28,5 +28,17 @@ namespace Aula1306_MVC.Controllers
 
             return View(categorias);
         }
-    }
+
+        //GET: Categorias
+        //view para criar novos Objects
+        public ActionResult Create()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Categoria categoria)
+        {
+            return View(categoria);
+        }
 }
