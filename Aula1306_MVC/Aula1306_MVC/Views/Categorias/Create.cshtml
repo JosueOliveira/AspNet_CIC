@@ -24,6 +24,9 @@
     @Html.LabelFor(m => Model.Ativo)
     @Html.EditorFor(m => Model.Ativo)
     <br/>
+    //Carrega Automático Campos da Model
+    @*@Html.EditorForModel();*@
+
     <input type="submit" value="Adicionar" class="btn btn-primary" />
      
 }
