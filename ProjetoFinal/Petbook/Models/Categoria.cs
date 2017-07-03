@@ -9,7 +9,7 @@ namespace Petbook.Models
     public class Categorias
     {
         [Key]
-        public int IdCat { get; set; }
+        public int CategoriaID { get; set; }
         public string Nome { get; set; }
     }
 }

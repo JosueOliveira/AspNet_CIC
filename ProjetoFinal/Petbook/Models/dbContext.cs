@@ -6,7 +6,7 @@ using System.Web;
 
 namespace Petbook.Models
 {
-    public class dbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         // You can add custom code to this file. Changes will not be overwritten.
         // 
@@ -15,7 +15,7 @@ namespace Petbook.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public dbContext() : base("name=dbContext")
+        public ApplicationDbContext() : base("name=ApplicationDbContext")
         {
         }
 

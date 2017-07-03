@@ -8,18 +8,16 @@ namespace Petbook.Controllers
 {
     public class PetController : Controller
     {
-        private dbContext db = new dbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Pet
+
         public ActionResult Index()
         {
-            var animais = db.Animals.Include(x => x._Categoria);
-            return View(animais.ToList());
-
-           
+            //var ani = db.Animals.Include(x => x._Categoria);
+            return View();
         }
 
-        // GET: Pet/Details/5
+
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -34,19 +32,16 @@ namespace Petbook.Controllers
             return View(animal);
         }
 
-        // GET: Pet/Create
+
         public ActionResult Create()
         {
-            ViewBag.CategoriaID = new SelectList(db.Categorias, "IdCat", "Nome");
+            ViewBag.CategoriaID = new SelectList(db.Categorias, "CategoriaID", "Nome");
             return View();
         }
 
-        // POST: Pet/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AnimalID,Nome,Idade,Dono")] Animal animal)
+        public ActionResult Create(Animal animal)
         {
             if (ModelState.IsValid)
             {
@@ -54,12 +49,12 @@ namespace Petbook.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoriaID = new SelectList(db.Categorias, "IdCat", "Nome", animal.CategoriaID);
+            ViewBag.CategoriaID = new SelectList(db.Categorias, "CategoriaID", "Nome", animal.CategoriaID);
 
             return View(animal);
         }
 
-        // GET: Pet/Edit/5
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -71,15 +66,13 @@ namespace Petbook.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.CategoriaID = new SelectList(db.Categorias, "CategoriaID", "Nome", animal.CategoriaID);
             return View(animal);
         }
 
-        // POST: Pet/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AnimalID,Nome,Idade,Dono")] Animal animal)
+        public ActionResult Edit(Animal animal)
         {
             if (ModelState.IsValid)
             {
@@ -87,10 +80,11 @@ namespace Petbook.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.CategoriaID = new SelectList(db.Categorias, "CategoriaID", "Nome", animal.CategoriaID);
             return View(animal);
         }
 
-        // GET: Pet/Delete/5
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,11 +98,10 @@ namespace Petbook.Controllers
             }
             return View(animal);
         }
-
-        // POST: Pet/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+         
+        [HttpPost]
+        [ActionName("Delete")]        
+        public ActionResult DeleteConfirmed(int? id)
         {
             Animal animal = db.Animals.Find(id);
             db.Animals.Remove(animal);
@@ -116,13 +109,6 @@ namespace Petbook.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+         
     }
 }

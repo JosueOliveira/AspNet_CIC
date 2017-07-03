@@ -1,0 +1,64 @@
+﻿@model PetBook.Models.Pet
+
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>ViewBag.Title</h2>
+
+<h3>Você deseja Realmente Excluir?</h3>
+<div>
+    <h4>Pet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model._Categoria.NomeCategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model._Categoria.NomeCategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomePet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomePet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdadePet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdadePet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonoPet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonoPet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar para Lista", "Index")
+        </div>
+    }
+</div>

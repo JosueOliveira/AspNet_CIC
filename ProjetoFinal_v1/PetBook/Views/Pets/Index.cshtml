@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PetBook.Models.Pet>
+
+@{
+    ViewBag.Title = "Index";
+}
+ 
+    <h2>ViewBag.title</h2>
+
+    <p>
+        @Html.ActionLink("Novo Perfil", "Create")
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model._Categoria.NomeCategoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomePet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdadePet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DonoPet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item._Categoria.NomeCategoria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomePet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdadePet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DonoPet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.PetID }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.PetID }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.PetID })
+                </td>
+            </tr>
+        }
+
+    </table>
+ 

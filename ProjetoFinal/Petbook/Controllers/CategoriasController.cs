@@ -8,15 +8,16 @@ namespace Petbook.Controllers
 {
     public class CategoriasController : Controller
     {
-        private dbContext db = new dbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Categorias
+         
         public ActionResult Index()
         {
-            return View(db.Categorias.ToList());
+            var categorias = db.Categorias.ToList();
+            return View(categorias);
         }
 
-        // GET: Categorias/Details/5
+         
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -31,18 +32,14 @@ namespace Petbook.Controllers
             return View(categoria);
         }
 
-        // GET: Categorias/Create
+         
         public ActionResult Create()
         {
             return View();
         }
-
-        // POST: Categorias/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdCat,Nome")] Categorias categoria)
+         
+        [HttpPost]         
+        public ActionResult Create(Categorias categoria)
         {
             if (ModelState.IsValid)
             {
@@ -51,10 +48,10 @@ namespace Petbook.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(categoria);
+            return View();
         }
 
-        // GET: Categorias/Edit/5
+         
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -69,12 +66,9 @@ namespace Petbook.Controllers
             return View(categoria);
         }
 
-        // POST: Categorias/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdCat,Nome")] Categorias categoria)
+         
+        [HttpPost] 
+        public ActionResult Edit(Categorias categoria)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +79,7 @@ namespace Petbook.Controllers
             return View(categoria);
         }
 
-        // GET: Categorias/Delete/5
+        
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -99,10 +93,9 @@ namespace Petbook.Controllers
             }
             return View(categoria);
         }
-
-        // POST: Categorias/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        
+        [HttpPost]
+        [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
             Categorias categoria = db.Categorias.Find(id);
@@ -110,14 +103,6 @@ namespace Petbook.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+       
     }
 }

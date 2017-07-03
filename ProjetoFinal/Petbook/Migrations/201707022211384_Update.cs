@@ -9,20 +9,20 @@ namespace Petbook.Migrations
         {
             DropForeignKey("dbo.Animals", "categoria_CategoriaID", "dbo.Categorias");
             DropIndex("dbo.Animals", new[] { "categoria_CategoriaID" });
-            RenameColumn(table: "dbo.Animals", name: "categoria_CategoriaID", newName: "IdCat");
-            AlterColumn("dbo.Animals", "IdCat", c => c.Int(nullable: false));
-            CreateIndex("dbo.Animals", "IdCat");
-            AddForeignKey("dbo.Animals", "IdCat", "dbo.Categorias", "IdCat", cascadeDelete: true);
+            RenameColumn(table: "dbo.Animals", name: "categoria_CategoriaID", newName: "CategoriaID");
+            AlterColumn("dbo.Animals", "CategoriaID", c => c.Int(nullable: false));
+            CreateIndex("dbo.Animals", "CategoriaID");
+            AddForeignKey("dbo.Animals", "CategoriaID", "dbo.Categorias", "CategoriaID", cascadeDelete: true);
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Animals", "IdCat", "dbo.Categorias");
-            DropIndex("dbo.Animals", new[] { "IdCat" });
-            AlterColumn("dbo.Animals", "IdCat", c => c.Int());
-            RenameColumn(table: "dbo.Animals", name: "IdCat", newName: "categoria_CategoriaID");
+            DropForeignKey("dbo.Animals", "CategoriaID", "dbo.Categorias");
+            DropIndex("dbo.Animals", new[] { "CategoriaID" });
+            AlterColumn("dbo.Animals", "CategoriaID", c => c.Int());
+            RenameColumn(table: "dbo.Animals", name: "CategoriaID", newName: "categoria_CategoriaID");
             CreateIndex("dbo.Animals", "categoria_CategoriaID");
-            AddForeignKey("dbo.Animals", "categoria_CategoriaID", "dbo.Categorias", "IdCat");
+            AddForeignKey("dbo.Animals", "categoria_CategoriaID", "dbo.Categorias", "CategoriaID");
         }
     }
 }

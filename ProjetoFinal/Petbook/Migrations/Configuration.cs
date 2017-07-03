@@ -5,15 +5,15 @@ namespace Petbook.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Petbook.Models.dbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Petbook.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Petbook.Models.dbContext";
+            ContextKey = "Petbook.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(Petbook.Models.dbContext context)
+        protected override void Seed(Petbook.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

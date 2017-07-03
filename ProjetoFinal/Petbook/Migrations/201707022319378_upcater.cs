@@ -9,9 +9,9 @@ namespace Petbook.Migrations
         {
             DropForeignKey("dbo.Animals", "CategoriaID", "dbo.Categorias");
             DropPrimaryKey("dbo.Categorias");
-            AddColumn("dbo.Categorias", "IdCat", c => c.Int(nullable: false, identity: true));
-            AddPrimaryKey("dbo.Categorias", "IdCat");
-            AddForeignKey("dbo.Animals", "CategoriaID", "dbo.Categorias", "IdCat", cascadeDelete: true);
+            AddColumn("dbo.Categorias", "CategoriaID", c => c.Int(nullable: false, identity: true));
+            AddPrimaryKey("dbo.Categorias", "CategoriaID");
+            AddForeignKey("dbo.Animals", "CategoriaID", "dbo.Categorias", "CategoriaID", cascadeDelete: true);
             DropColumn("dbo.Categorias", "CategoriaID");
         }
         
@@ -20,7 +20,7 @@ namespace Petbook.Migrations
             AddColumn("dbo.Categorias", "CategoriaID", c => c.Int(nullable: false, identity: true));
             DropForeignKey("dbo.Animals", "CategoriaID", "dbo.Categorias");
             DropPrimaryKey("dbo.Categorias");
-            DropColumn("dbo.Categorias", "IdCat");
+            DropColumn("dbo.Categorias", "CategoriaID");
             AddPrimaryKey("dbo.Categorias", "CategoriaID");
             AddForeignKey("dbo.Animals", "CategoriaID", "dbo.Categorias", "CategoriaID", cascadeDelete: true);
         }
